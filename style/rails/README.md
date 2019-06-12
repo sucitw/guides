@@ -19,9 +19,12 @@ Rails
 * Use `def self.method`, not the `scope :method` DSL.
 * Use the default `render 'partial'` syntax over `render partial: 'partial'`.
 * Use `link_to` for GET requests, and `button_to` for other HTTP verbs.
+* Use new-style `validates :name, presence: true` validations, and put all
+  validations for a given column together. [Example][validations].
 
 [order-associations]: /style/rails/sample.rb#L2-L4
-[`app/views/application`]: http://asciicasts.com/episodes/269-template-inheritance
+[validations]: /style/rails/sample.rb#L6
+[`app/views/application`]: http://railscasts.com/episodes/269-template-inheritance
 
 Migrations
 ----------
@@ -30,8 +33,10 @@ Migrations
 
 * Set an empty string as the default constraint for non-required string and text
   fields. [Example][default example].
+* Set an explicit [`on_delete` behavior for foreign keys][add_foreign_key].
 
 [default example]: migration.rb#L6
+[add_foreign_key]: http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_foreign_key
 
 Routes
 ------

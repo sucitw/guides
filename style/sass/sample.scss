@@ -1,50 +1,45 @@
-@import "bourbon";
+@import "partial-name";
 
-section.application {
-  @extend %extend;
-  @include mixin;
-  attribute: value;
+.class-one {
+  background-color: $color-variable;
+  border: 0;
 
-  @include media(value) {
-    attribute: value;
-  }
-
-  &.additional-selector {
-    attribute: value;
+  @media (min-width: $screen-variable) {
+    margin: ($spacing-variable * 2) 1rem;
   }
 
   &:hover {
-    attribute: value;
+    box-shadow: 0 0 2px 1px rgba($color-variable, 0.2);
   }
 
   &::before {
-    content: "<";
+    content: "hello";
   }
+}
 
-  &::after {
-    content: ">";
-  }
+$map: (
+  key-1: value-1,
+  key-2: value-2,
+);
 
-  .news {
-    attribute: value;
-    attribute: ($variable * 1.5) 2em;
+.class-two {
+  @extend %placeholder;
+  @include mixin;
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
 
-    article {
-      @extend media(value) {
-        attribute: value;
-      }
+  a {
+    text-decoration: none;
 
-      p {
-        attribute: value;
-      }
+    &:focus,
+    &:hover {
+      text-decoration: underline;
     }
   }
 
-  .sidebar {
-    attribute: value;
-
-    h2 {
-      attribute: value;
-    }
+  // don't concatenate selectors
+  &__child {
+    color: $red;
   }
 }

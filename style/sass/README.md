@@ -1,6 +1,10 @@
 # Sass
 
-[Sample](sample.scss)
+- [Sample](sample.scss)
+- [Default stylelint configuration](.stylelintrc.json)
+  - This configuration aligns with our team-wide guides below. It does _not_,
+    however, enforce a particular class naming structure,
+    which is a team decision to be made on a per-project basis.
 
 ## Formatting
 
@@ -21,36 +25,31 @@
 * Use parentheses around individual operations in shorthand declarations: `padding: ($variable * 1.5) ($variable * 2);`
 * Use double colons for pseudo-elements
 * Use a `%` unit for the amount/weight when using Sass's color functions: `darken($color, 20%)`, not `darken($color, 20)`
+* Use a trailing comma after each item in a map, including the last item.
 
 ## Order
 
 * Use alphabetical order for declarations.
 * Place `@extends` and `@includes` at the top of your declaration list.
 * Place media queries directly after the declaration list.
-* Place concatenated selectors second.
-* Place pseudo states and elements third.
-* Place nested selectors last.
+* Place pseudo-classes and pseudo-elements second.
+* Place nested elements third.
+* Place nested classes fourth.
 
 ## Selectors
 
 * Don't use ID's for style.
+* Avoid over-qualified selectors: `h1.page-title`, `div > .page-title`
 * Use meaningful names: `$visual-grid-color` not `$color` or `$vslgrd-clr`.
+* Be consistent about naming conventions for classes. For instance, if a project is using BEM, continue using it, and if it's not, do not introduce it.
 * Use ID and class names that are as short as possible but as long as necessary.
-* Avoid using the direct descendant selector `>`.
-* Avoid nesting more than 4 selectors deep.
-* Don't nest more than 6 selectors deep.
-* Use HTML tags on vague classes that need a qualifier like `header.application` not `.main`.
-* Avoid using the HTML tag in the class name: `section.news` not `section.news-section`.
-* Avoid using HTML tags on classes for generic markup `<div>`, `<span>`: `.widgets` not `div.widgets`.
-* Avoid using HTML tags on classes with specific class names like `.featured-articles`.
+* Avoid nesting more than 3 selectors deep.
 * Avoid using comma delimited selectors.
 * Avoid nesting within a media query.
+* Don't concatenate selectors using Sass's parent selector (`&`).
 
 ## Organization
 
-* Use Bourbon for a Sass library.
-* Use Neat for a grid framework.
-* Use Bitters/`base` directory for styling element selectors, global variables, global extends and global mixins.
-* Use [Normalize](https://github.com/necolas/normalize.css) for browser rendering consistency, rather than a reset.
+* Use a `base` directory for styling element selectors, global variables, global extends and global mixins.
 * Use HTML structure for ordering of selectors. Don't just put styles at the bottom of the Sass file.
 * Avoid having files longer than 100 lines.

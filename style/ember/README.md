@@ -2,6 +2,14 @@ Ember
 =====
 
 * Don't put a space between the opening handlebars braces and the variable.
+* Prefer components over partials.
+* Alias local variables to functions from `Ember` and `DS`
+([sample][local-Ember-DS])
+* Prefer [ember-ajax] over ic-ajax. ([sample][ember-ajax-sample])
+
+[local-Ember-DS]: sample.js#L23-L24
+[ember-ajax]: https://github.com/ember-cli/ember-ajax
+[ember-ajax-sample]: sample.js#L31-L38
 
 Ember-Data
 ----------
